@@ -66,3 +66,45 @@ blessbis/
 ├── .env                         # Environment variables (not committed)
 ├── app.js                       # Express app entry point
 └── README.md
+
+⚙️ Setup & Installation
+1.Clone the repo:
+git clone https://github.com/your-repo/blessbis
+cd blessbis
+
+2.Install dependencies:
+npm install
+
+3.Create .env file with above variables.
+
+▶️ Run Locally
+1.Start your API server:
+npm start
+2.Run BullMQ worker (in separate terminal) (Optional) :
+node worker/fileProcessor.js
+else it will run in same server
+
+
+🧪 API Usage Examples
+curl -X POST http://localhost:5001/api/file/upload \
+  -H "Authorization: Bearer <your_jwt_token>" \
+  -F "image=@/path/to/your/image.jpg"
+2. Get file metadata by ID
+http://localhost:5001/api/file/:id
+
+3.register api
+http://localhost:5000/api/v1/register
+payload
+{
+    "name":"",
+    "email":"",
+    "password":""
+}
+4.login api
+http://localhost:5000/api/v1/login
+payload
+{
+    "email":"",
+    "password":""
+}
+
